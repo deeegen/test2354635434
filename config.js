@@ -19,5 +19,5 @@ module.exports = {
 
   // Static file serving
   staticDir: __dirname + "/public",
-  indexFile: __dirname + "/public/index.html",
+  indexFile: __dirname + "/public/index.ejs",
 };

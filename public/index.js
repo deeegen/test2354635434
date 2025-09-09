@@ -12,12 +12,12 @@ function search() {
   const iframeMode = document.getElementById("iframeToggle").checked;
 
   if (iframeMode) {
-    // Open frame.html and pass target via window.name
-    const frameWin = window.open("/frame.html", "_self");
+    // Open the /frame route (renders frame.ejs) and pass target via window.name
+    const frameWin = window.open("/frame", "_self");
     frameWin.name = url;
 
-    // Also store in history state to persist for back/forward
-    history.replaceState({ targetUrl: url }, "", "/frame.html");
+    // Store in history state to persist for back/forward navigation
+    history.replaceState({ targetUrl: url }, "", "/frame");
   } else {
     window.location.href = "/app/gateway?url=" + encodeURIComponent(url);
   }
