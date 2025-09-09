@@ -107,7 +107,8 @@
   transition: max-height 0.2s;
 }
 
-.bookmark {
+/* Bookmark item */
+.bookmark-item {
   background: rgba(255, 255, 255, 0.13);
   padding: 7px 14px 7px 13px;
   border-radius: 19px;
@@ -117,48 +118,50 @@
   font-family: monospace;
   border: 1px solid rgba(255, 251, 0, 0.3);
   color: #fff;
-  position: relative;
   max-width: 255px;
   overflow: hidden;
   text-overflow: ellipsis;
-  cursor: pointer;
   margin-bottom: 1.5px;
   transition: background 0.15s, box-shadow 0.15s;
   box-shadow: 0 1px 6px 0 #7c3aed1a;
 }
-.bookmark:hover {
+.bookmark-item:hover {
   background: #fffb00cc;
   color: #7c3aed;
   box-shadow: 0 2px 18px #fffb0085;
   z-index: 3;
 }
 
-.bookmark-title {
+/* Bookmark link inside item */
+.bookmark-item a {
   flex: 1 1 auto;
   min-width: 0;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  color: inherit;
+  text-decoration: none;
   margin-right: 9px;
   font-family: "Comic Neue", Arial, sans-serif;
   font-size: 1em;
 }
 
-.del-btn {
+/* Delete button */
+.delete-bookmark-btn {
   background: transparent;
   border: none;
   cursor: pointer;
-  margin-left: 1px;
   color: #fa278e;
   font-size: 1.17em;
   transition: color 0.18s;
   opacity: 0.91;
 }
-.del-btn:hover {
+.delete-bookmark-btn:hover {
   color: #ff0033;
   opacity: 1;
 }
 
+/* Pixel style element */
 .pixel {
   position: absolute;
   left: 50%;

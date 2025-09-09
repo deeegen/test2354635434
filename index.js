@@ -27,12 +27,12 @@ app.use("/", express.static(staticDir));
 app.get("/", (req, res) => {
   // Strip extension from indexFile in case it has ".html"
   const viewName = path.basename(indexFile, path.extname(indexFile));
-  res.render(viewName, { title: "My EJS Page" });
+  res.render(viewName, { title: "pb3" });
 });
 
 // Serve the frame page using EJS
 app.get("/frame", (req, res) => {
-  res.render("frame", { title: "Frame View" });
+  res.render("frame", { title: "" });
 });
 
 // All other requests are proxied
