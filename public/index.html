@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portalbytes</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <script src="/index.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Comic+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="blob-container">
+      <div class="blob blob-yellow"></div>
+      <div class="blob blob-pink"></div>
+    </div>
+    <div class="main-container">
+      <div class="header">Portalbytes</div>
+      <div class="bar"></div>
+      <div class="search">
+        <input
+          id="input"
+          type="text"
+          placeholder="https://youtube.com"
+          autofocus
+        />
+        <label style="margin-left: 16px">
+          <input type="checkbox" id="iframeToggle" />
+          Open in iframe
+        </label>
+        <button id="search" class="icon-btn" onclick="search()" title="Go">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <button class="icon-btn bookmark-btn" title="Bookmark">
+          <i class="fas fa-bookmark"></i>
+        </button>
+        <button class="icon-btn settings-btn" title="Settings">
+          <i class="fas fa-cog"></i>
+        </button>
+      </div>
+      <div class="bookmark-container">
+        <div class="bookmark-header">Bookmarks</div>
+        <div class="bookmarks-list" id="bookmarksList"></div>
+      </div>
+      <nav class="nav">
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-compass"></i> Explore</a>
+        <a href="#"><i class="fas fa-link"></i> Links</a>
+        <a href="#"><i class="fas fa-info-circle"></i> About</a>
+      </nav>
+      <div id="recent-searches-popup"></div>
+    </div>
+    <div class="settings-modal" id="settingsModal">
+      <div class="settings-modal-content">
+        <button class="close-settings-btn" id="closeSettingsBtn">
+          &times;
+        </button>
+        <iframe class="settings-iframe" id="settingsIframe"></iframe>
+      </div>
+    </div>
+    <div id="iframeContainer"></div>
+  </body>
+</html>

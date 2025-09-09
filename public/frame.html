@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ozone Frame</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="proxyFrame" src=""></iframe>
+
+    <script>
+      function loadIframe() {
+        let target = window.name;
+
+        // If window.name is empty, check history.state (back/forward navigation)
+        if (!target && history.state && history.state.targetUrl) {
+          target = history.state.targetUrl;
+          // Restore to window.name for consistency if user navigates again
+          window.name = target;
+        }
+
+        if (target) {
+          const proxyUrl = "/app/gateway?url=" + encodeURIComponent(target);
+          document.getElementById("proxyFrame").src = proxyUrl;
+          window.name = ""; // optional: clear to prevent accidental reuse on refresh
+        } else {
+          document.body.innerHTML = "<p>No URL provided.</p>";
+        }
+      }
+
+      // Load iframe on page load
+      loadIframe();
+    </script>
+  </body>
+</html>

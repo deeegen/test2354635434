@@ -1,0 +1,75 @@
+.settings-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(28, 24, 37, 0.85);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.settings-modal-content {
+  position: relative;
+  width: 90vw;
+  max-width: 960px;
+  height: 75vh;
+  background: #1c1825;
+  border-radius: 16px;
+  box-shadow: 0 0 30px 8px #00d2ffaa;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-settings-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 2.4em;
+  color: #00d2ff;
+  cursor: pointer;
+  text-shadow: 0 0 12px #3a47d5;
+  transition: color 0.25s;
+  z-index: 10;
+}
+
+.settings-iframe {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+  border-radius: 0 0 16px 16px;
+  background: #111;
+}
+
+#iframeContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  z-index: 999999;
+  display: none;
+}
+
+#recent-searches-popup {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid #fffb00;
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px 4px #fffb0080, 0 0 12px #ff00ea88 inset;
+  z-index: 1000;
+  font-family: "Comic Neue", Arial, sans-serif;
+  display: none;
+  padding: 6px 0;
+  box-sizing: border-box;
+}

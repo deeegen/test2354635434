@@ -1,0 +1,180 @@
+/* Search bar */
+.search {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.09);
+  border: 3px solid #fffb00;
+  border-radius: 30px;
+  margin: 50px auto 0 auto;
+  max-width: 540px;
+  width: 90%;
+  padding: 18px 28px;
+  box-shadow: 0 0 24px 6px #fffb0088, 0 0 0 8px #7c3aed33 inset;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.search input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.3em;
+  width: 100%;
+  outline: none;
+  font-family: "Comic Neue", Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.search input::placeholder {
+  color: #ffe066;
+  opacity: 1;
+  font-style: italic;
+}
+
+/* Icon buttons */
+.icon-btn,
+.bookmark-btn,
+.settings-btn {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.icon-btn {
+  background: linear-gradient(135deg, #fffb00 40%, #ff00ea 100%);
+  border: 2px solid #fff;
+  width: 48px;
+  height: 48px;
+  margin-left: 16px;
+  box-shadow: 0 0 12px 3px #fffb00, 0 0 6px #ff00ea;
+}
+.icon-btn:hover {
+  transform: scale(1.1) rotate(-7deg);
+  box-shadow: 0 0 30px 8px #fffb00cc, 0 0 16px #ff00ea;
+}
+.icon-btn i {
+  font-size: 1.6em;
+  color: #7c3aed;
+  text-shadow: 0 0 8px #fff, 0 0 14px #fffb00;
+}
+
+/* Bookmark buttons */
+.bookmark-btn {
+  margin-left: 10px;
+  background: linear-gradient(135deg, #ff00ea 40%, #fffb00 100%);
+  box-shadow: 0 0 12px 3px #ff00ea, 0 0 6px #fffb00;
+  transition: background 0.13s, box-shadow 0.13s, transform 0.18s;
+}
+.bookmark-btn:hover {
+  transform: scale(1.13) rotate(8deg);
+  background: linear-gradient(135deg, #fffb00 32%, #ff00ea 100%);
+  box-shadow: 0 0 30px 8px #ff00ead0, 0 0 16px #fffb00;
+}
+.bookmark-btn i {
+  color: #ff00ea;
+  text-shadow: 0 0 10px #fffb00, 0 0 18px #fff;
+}
+
+/* Bookmark container */
+.bookmark-container {
+  margin: 34px auto 0 auto;
+  max-width: 540px;
+  width: 90%;
+}
+.bookmark-header {
+  font-size: 0.95em;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.bookmarks-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 7px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+  overflow-y: auto;
+  min-height: 22px;
+  max-height: 144px;
+  transition: max-height 0.2s;
+}
+
+.bookmark {
+  background: rgba(255, 255, 255, 0.13);
+  padding: 7px 14px 7px 13px;
+  border-radius: 19px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.93em;
+  font-family: monospace;
+  border: 1px solid rgba(255, 251, 0, 0.3);
+  color: #fff;
+  position: relative;
+  max-width: 255px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  margin-bottom: 1.5px;
+  transition: background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 6px 0 #7c3aed1a;
+}
+.bookmark:hover {
+  background: #fffb00cc;
+  color: #7c3aed;
+  box-shadow: 0 2px 18px #fffb0085;
+  z-index: 3;
+}
+
+.bookmark-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: 9px;
+  font-family: "Comic Neue", Arial, sans-serif;
+  font-size: 1em;
+}
+
+.del-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 1px;
+  color: #fa278e;
+  font-size: 1.17em;
+  transition: color 0.18s;
+  opacity: 0.91;
+}
+.del-btn:hover {
+  color: #ff0033;
+  opacity: 1;
+}
+
+.pixel {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 3;
+  image-rendering: pixelated;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 12px #fffb00);
+}
+
+@media (max-width: 700px) {
+  .bookmark-header {
+    font-size: 0.9em;
+  }
+  .bookmarks-list {
+    max-height: 105px;
+  }
+}
